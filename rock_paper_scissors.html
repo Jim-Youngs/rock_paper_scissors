@@ -9,22 +9,44 @@
 <body>
     <script>
         //Pseudocode
+        //Define Rock, Paper & Scissors (assign a value)
         //Player chooses Rock, Paper or Scissors
         //Computer chooses Rock, Paper or Scissors
+        //Both choices must be case insensitive
         //If players choice > computers choice
         //Player gains one point
         //If players choice < computers choice
         //Computer gains one point
-        //If players choice = computers choice
+        //If players choice == computers choice
         //No points are rewarded
-        //First to three points ends the game and wins
+        //First to three points ends the round and wins that game
 
+        const rock = 1
+        const paper = 2
+        const scissors = 3
+
+        // function is to generate the computers choice
         function getComputerChoice() {
             let choices = ['rock', 'paper', 'scissors']
             return computerChoice = choices[(Math.random() * choices.length) | 0]
         }
 
+        //function is to play one round between player and computer
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection > computerSelection) {
+                return 'You win'
+            } else if (playerSelection < computerSelection) {
+                return 'You lose'
+            } else {
+                return 'Draw'
+            }
+        }
+
+        const playerSelection = 'rock';
+        const computerSelection = getComputerChoice();
         
+        console.log(playRound(playerSelection, computerSelection));
+
     </script>
 
 </body>
